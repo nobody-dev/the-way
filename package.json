@@ -6,7 +6,20 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lint:script": "eslint --ext .js,.jsx,.ts,.tsx,.vue --ignore-path .gitignore . --fix",
+    "lint:style": "stylelint \"./**/*.{vue,html,css}\" --fix",
+    "commit": "npx git-cz"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "yarn lint:script",
+    "*.{css,vue}": "yarn lint:style"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "dependencies": {
     "vue": "^3.0.0",
@@ -15,6 +28,8 @@
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@types/jest": "^24.0.19",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
@@ -34,6 +49,17 @@
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
-    "vue-jest": "^5.0.0-0"
+    "vue-jest": "^5.0.0-0",
+    "husky": "^4.0.0",
+    "lint-staged": "^10.0.0",
+    "stylelint": "^10.1.0",
+    "stylelint-at-rule-no-children": "^0.3.1",
+    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
+    "stylelint-media-use-custom-media": "^2.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-value-no-unknown-custom-properties": "^3.0.0"
   }
 }
