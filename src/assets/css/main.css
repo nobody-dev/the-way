@@ -1,5 +1,6 @@
 @import "./normalize.css";
 
 html {
+  color: #939393;
   font-family: "Source Sans Pro", sans-serif;
 }

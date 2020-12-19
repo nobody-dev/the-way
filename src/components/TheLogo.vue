@@ -18,5 +18,6 @@ export default {
     background: -webkit-linear-gradient(#eee, #333);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    user-select: none;
   }
 </style>
