@@ -3,7 +3,7 @@
     <TheLogo :class=$style.logo />
     <UiButton
       :class="$style.button"
-      text="Продолжить"
+      text="Продолжить blablabla"
     />
     <UiButton
       :class="$style.button"
