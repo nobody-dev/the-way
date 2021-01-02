@@ -20,7 +20,6 @@ export default {
 <style lang="postcss" module>
   .button {
     padding: 10px 15px;
-    font-size: 15px;
     background: -webkit-linear-gradient(#eee, #333);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

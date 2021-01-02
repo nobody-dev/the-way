@@ -41,7 +41,7 @@ export default defineComponent({
   },
   data() {
     return {
-      localValue: '' as string | number,
+      localValue: '',
     };
   },
   computed: {
@@ -51,7 +51,7 @@ export default defineComponent({
   },
   watch: {
     value: {
-      handler(value: string | number) {
+      handler(value: string) {
         this.localValue = value;
       },
       immediate: true,
@@ -72,10 +72,10 @@ export default defineComponent({
 <style lang="postcss" module>
   .root {
     display: flex;
-    width: 200px;
   }
 
   .input {
+    width: 100%;
     padding: 5px 10px;
     color: #939393;
     background: transparent;
@@ -92,10 +92,10 @@ export default defineComponent({
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 0 0 5px;
     background: transparent;
     border: none;
     outline: none;
-    transform: translateY(-50%);
     cursor: pointer;
   }
 </style>
