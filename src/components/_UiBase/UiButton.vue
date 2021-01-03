@@ -5,12 +5,13 @@
 </template>
 
 <script lang="ts">
+import { PropType } from 'vue';
 
 export default {
   name: 'UiButton',
   props: {
     text: {
-      type: String,
+      type: String as PropType<string>,
       default: '',
     },
   },

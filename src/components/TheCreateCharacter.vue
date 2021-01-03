@@ -12,8 +12,13 @@
       <UiTextSlider
         :class=$style.class
         :value="classId"
-        :items="[{id: 0, title: 'Маг'}, {id: 1, title: 'Воин'}]"
+        :items="classes"
         @change="changeClassId"
+      />
+      <UiSpriteImg
+        :class=$style.avatar
+        :img="currentAvatar"
+        sprite="characters"
       />
     </div>
   </UiContainer>
@@ -21,21 +26,37 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import classes from '@/constants/classes';
+
 import UiContainer from './_UiBase/UiContainer.vue';
 import UiTextField from './_UiBase/UiTextField.vue';
 import UiTextSlider from './_UiBase/UiTextSlider.vue';
+import UiSpriteImg from './_UiBase/UiSpriteImg.vue';
+
+interface Classes {
+  id: number;
+  title: string;
+  name: string;
+}
 
 export default defineComponent({
   components: {
     UiContainer,
     UiTextField,
     UiTextSlider,
+    UiSpriteImg,
   },
   data() {
     return {
       nickname: '',
       classId: 0,
+      classes,
     };
+  },
+  computed: {
+    currentAvatar(): string | undefined {
+      return classes.find((item: Classes) => item.id === this.classId)?.name;
+    },
   },
   methods: {
     subNickname(value: string) {
@@ -71,5 +92,11 @@ export default defineComponent({
 
   .class {
     width: 200px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
   }
 </style>

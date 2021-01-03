@@ -1,6 +1,6 @@
 import { RouteRecordRaw } from 'vue-router';
-import Create from '@/views/Create.vue';
-import Menu from '../views/Menu.vue';
+import Create from '@/views/TheCreate.vue';
+import Menu from '../views/TheMenu.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
