@@ -1,27 +1,19 @@
 <template>
-  <div :class="$style.menu">
+  <div :class="$style.battle">
+    <h1>Battle</h1>
   </div>
 </template>
 
 <script lang="ts">
-import { ref } from 'vue';
+import { defineComponent } from 'vue';
 
-export default {
-  setup() {
-    const counter = ref(0);
-    const obj = ref({ title: 'Vue 3' });
-
-    return {
-      counter,
-      obj,
-    };
-  },
-};
+export default defineComponent({
+  components: {},
+});
 </script>
 
 <style lang="postcss" module>
-  .menu {
+  .battle {
     display: flex;
-    justify-content: center;
   }
 </style>

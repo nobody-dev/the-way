@@ -1,19 +1,23 @@
 <template>
-  <div :class="$style.world">
-    <h1>World</h1>
+  <div :class="$style.game">
+    <TheHeader/>
+    <router-view/>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import TheHeader from '@/components/Header/TheHeader.vue';
 
 export default defineComponent({
-  components: {},
+  components: {
+    TheHeader,
+  },
 });
 </script>
 
 <style lang="postcss" module>
-  .world {
+  .game {
     display: flex;
   }
 </style>
