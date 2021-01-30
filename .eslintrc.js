@@ -15,7 +15,10 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'global-require': 'off',
-    'import/no-dynamic-require': 'off'
+    'import/no-dynamic-require': 'off',
+    '@typescript-eslint/no-inferrable-types': 'off',
+    'no-param-reassign': 'off',
+    'interface-name-prefix': 'off',
   },
   overrides: [
     {

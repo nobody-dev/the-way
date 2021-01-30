@@ -27,6 +27,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import classes from '@/constants/classes';
+import { Player } from '@/core/Units/Player';
+import { Unit } from '@/core/Units/Unit';
 
 import UiContainer from './_UiBase/UiContainer.vue';
 import UiTextField from './_UiBase/UiTextField.vue';
